@@ -52,16 +52,21 @@ function exibirLista(){
 }
 
 function exibirResultado(){
+    document.getElementById("listaAmigos").innerHTML = "";
+    
     let listaNomes = document.getElementById("resultado");
     listaNomes.innerHTML = "";
 
     for (let i =0; i < amigosSorteados.length;i++){
+        document.getElementById("resultado").innerHTML = "";
+
         let itemListaNomesSorteados = document.createElement("li");
-        itemListaNomesSorteados.textContent = amigosSorteados[i];
+        itemListaNomesSorteados.textContent = `O amigo secreto sorteado é: ${amigosSorteados[i]}`;
 
         listaNomes.appendChild(itemListaNomesSorteados);
     }
 }
+
 
 function limparNome(){
     return document.getElementById("amigo").value = "";
